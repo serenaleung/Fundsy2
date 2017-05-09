@@ -1,0 +1,23 @@
+<h1>New Campaign</h1>
+
+<%= simple_form_for @campaign do |f| %>
+  <%= f.input :title %>
+  <%= f.input :body %>
+  <%= f.input :goal %>
+  <%= f.input :end_date %>
+
+  <%# this create fields that help us create the nested records
+      which are rewards it will use the proper naming convention
+      for them so they work properly with Rails controller %>
+<%= f.error :rewards %>
+<div class='rewards'>
+  <%= f.simple_fields_for :rewards do |r| %>
+    <%= render 'reward_fields', f: r  %>
+  <% end %>
+  <div class="links">
+    <%= link_to_add_association 'Add Reward', f, :rewards %>
+  </div>
+</div>
+
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
