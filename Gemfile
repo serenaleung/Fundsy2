@@ -35,7 +35,9 @@ gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'cocoon'
 gem 'aasm'
-
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
